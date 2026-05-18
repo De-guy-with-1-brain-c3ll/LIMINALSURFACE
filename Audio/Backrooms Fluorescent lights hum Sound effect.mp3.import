@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds2uv8hat2d4e"
+path="res://.godot/imported/Backrooms Fluorescent lights hum Sound effect.mp3-03e65d9236dc5c1ba977cf14f5d18bea.mp3str"
+
+[deps]
+
+source_file="res://Audio/Backrooms Fluorescent lights hum Sound effect.mp3"
+dest_files=["res://.godot/imported/Backrooms Fluorescent lights hum Sound effect.mp3-03e65d9236dc5c1ba977cf14f5d18bea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

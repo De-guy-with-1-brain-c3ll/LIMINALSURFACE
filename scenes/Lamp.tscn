@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://diivgtjmlfxbt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2btdt"]
+size = Vector3(0.5, 0.1, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pm05s"]
+emission_enabled = true
+emission = Color(0.8034386, 0.774776, 0.2522293, 1)
+emission_energy_multiplier = 2.99
+
+[sub_resource type="BoxMesh" id="BoxMesh_pm05s"]
+size = Vector3(0.3, 0.1, 0.5)
+
+[node name="Floureclight11" type="MeshInstance3D" unique_id=1201343896]
+transform = Transform3D(-5.552279, -0.0051762266, -0.0065828552, -0.017830677, 1.6118466, -7.045608e-08, 0.022675822, 2.1069922e-05, -1.6118419, 0, 0, 0)
+gi_lightmap_texel_scale = 1.0283
+mesh = SubResource("BoxMesh_2btdt")
+surface_material_override/0 = SubResource("StandardMaterial3D_pm05s")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1339719633]
+transform = Transform3D(0.18010381, -1.0576606e-10, 4.0745363e-10, -6.405081e-10, 0.6204033, 1.3551471e-10, -2.3283064e-09, 8.185452e-12, 0.6204032, 7.496029e-05, -0.10496974, 0.01927185)
+light_color = Color(0.883793, 0.89284736, 0.69898695, 1)
+light_energy = 3.421
+light_indirect_energy = 9.842
+light_volumetric_fog_energy = 1.848
+omni_range = 16.582
+omni_attenuation = 0.869
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1422358107]
+transform = Transform3D(1.8681861, -1.1677415e-10, -1.1641532e-10, -1.0420251e-09, 1.0027896, 0, -1.4901161e-08, 1.8189894e-12, 1.0035458, 3.0200928e-05, 0.018091202, -0.039714813)
+mesh = SubResource("BoxMesh_pm05s")

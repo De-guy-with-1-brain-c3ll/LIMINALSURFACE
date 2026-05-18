@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhgdax8t4lcgx"]
+
+[ext_resource type="Texture2D" uid="uid://d36i5mr06fahn" path="res://textures/66de4076-9fe6-4770-9e07-49a7ab8824d2.png" id="1_0nu58"]
+
+[resource]
+albedo_color = Color(0.9350492, 0.8972969, 0.82444227, 1)
+albedo_texture = ExtResource("1_0nu58")
+roughness = 0.55
+emission = Color(0.059968196, 0.04383953, 3.008172e-09, 1)
+emission_energy_multiplier = 0.0
+anisotropy_enabled = true
+anisotropy = 1.0
+uv1_scale = Vector3(50, 1, 1)
