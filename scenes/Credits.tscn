@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://fmvmfxeha6de"]
+
+[node name="Control" type="Control" unique_id=393164339]
+layout_mode = 3
+anchor_right = 0.171
+anchor_bottom = 0.22700001
+offset_right = 57.007996
+offset_bottom = 33.90399
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1081932518]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 153.0
+text = "Credits:
+Entrance By jack
+Hallway By Benjamin
+Sound design by Benjamin
+Sound actors: Benjamin
+"

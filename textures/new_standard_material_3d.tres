@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dm4aut0celwdj"]
+
+[ext_resource type="Texture2D" uid="uid://d36i5mr06fahn" path="res://textures/66de4076-9fe6-4770-9e07-49a7ab8824d2.png" id="1_ffn0e"]
+[ext_resource type="Texture2D" uid="uid://6oxxoebj6g5e" path="res://textures/Image (1).png" id="2_jdywe"]
+
+[resource]
+albedo_color = Color(0.6862745, 0.8352941, 0.70980394, 1)
+albedo_texture = ExtResource("1_ffn0e")
+metallic = 0.25
+metallic_specular = 0.51
+metallic_texture = ExtResource("2_jdywe")
+roughness = 0.4
+emission = Color(0.059968196, 0.04383953, 3.008172e-09, 1)
+emission_energy_multiplier = 0.0
+anisotropy_enabled = true
+anisotropy = 1.0
+detail_blend_mode = 3
+detail_albedo = ExtResource("1_ffn0e")
+uv1_scale = Vector3(7, 1, 1)

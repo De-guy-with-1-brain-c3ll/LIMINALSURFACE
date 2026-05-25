@@ -2,15 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://6oxxoebj6g5e" path="res://textures/Image (1).png" id="1_2btdt"]
 [ext_resource type="Script" uid="uid://d3o4de6ymxi6i" path="res://scripts/Player.gd" id="1_jsa5y"]
-[ext_resource type="Script" uid="uid://becyj5egvl80j" path="res://scenes/Scare.gd" id="1_v2fgs"]
-[ext_resource type="Material" uid="uid://bhgdax8t4lcgx" path="res://textures/wallhall.tres" id="2_gdbsj"]
+[ext_resource type="Script" uid="uid://becyj5egvl80j" path="res://scripts/Scare.gd" id="1_v2fgs"]
 [ext_resource type="Texture2D" uid="uid://ligipfy8ljkm" path="res://textures/532df9fb-b91c-4dfe-91d6-446b1452e074.png" id="3_gdbsj"]
 [ext_resource type="Texture2D" uid="uid://d36i5mr06fahn" path="res://textures/66de4076-9fe6-4770-9e07-49a7ab8824d2.png" id="3_pm05s"]
 [ext_resource type="PackedScene" uid="uid://diivgtjmlfxbt" path="res://scenes/Lamp.tscn" id="3_y2ytm"]
+[ext_resource type="Material" uid="uid://d3pn55wyo867j" path="res://textures/tble.tres" id="4_88sjj"]
 [ext_resource type="AudioStream" uid="uid://ds2uv8hat2d4e" path="res://Audio/Backrooms Fluorescent lights hum Sound effect.mp3" id="6_4u0yh"]
+[ext_resource type="Material" uid="uid://bvlwx5j845vd8" path="res://textures/door.tres" id="8_50jlw"]
 [ext_resource type="AudioStream" uid="uid://dhxxhpukbucpw" path="res://Audio/daisy-daisy.mp3" id="8_kgmwk"]
 [ext_resource type="AudioStream" uid="uid://bs4xm04jaq2mf" path="res://Audio/rush-jumpscare-from-roblox-doors.mp3" id="10_vocw4"]
 [ext_resource type="AudioStream" uid="uid://bh7pdkfiubdsf" path="res://Audio/phasmophobia-sound-board-effects-07-sound-effects-heartbeat-stress_ohtStgP.mp3" id="11_88sjj"]
+[ext_resource type="AudioStream" uid="uid://dt6oalfgedqqf" path="res://Audio/Recording (9).mp3" id="13_7hvyv"]
+[ext_resource type="Script" uid="uid://dxibeut52rdvj" path="res://scripts/audio_stream_player.gd" id="14_y0pfb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4u0yh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,6 +58,9 @@ metallic = 0.14
 roughness = 0.67
 refraction_enabled = true
 refraction_scale = 0.11
+detail_enabled = true
+detail_mask = ExtResource("1_2btdt")
+detail_blend_mode = 3
 uv1_scale = Vector3(200, 10, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mxpvh"]
@@ -106,19 +112,24 @@ size = Vector3(10, 10, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_gdbsj"]
 size = Vector3(1, 2, 0.1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgmwk"]
-albedo_color = Color(0.41139627, 0.22982752, 9.62615e-08, 1)
-metallic = 0.9
-metallic_specular = 0.0
-roughness = 0.0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_7hvyv"]
-size = Vector3(1, 2, 0.1)
+size = Vector3(1, 2, 0.09866943)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v2fgs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50jlw"]
-size = Vector3(6.8529663, 4.748657, 1)
+size = Vector3(6.853, 4.749, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88sjj"]
+size = Vector3(1, 2.0205688, 0.57995605)
+
+[sub_resource type="TextMesh" id="TextMesh_88sjj"]
+uv2_padding = 2.27
+text = "Classroom 007"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50jlw"]
+refraction_enabled = true
+refraction_scale = 1.0
 
 [node name="Hallway1" type="Node3D" unique_id=2010619]
 script = ExtResource("1_v2fgs")
@@ -127,7 +138,7 @@ script = ExtResource("1_v2fgs")
 environment = SubResource("Environment_kgmwk")
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=1517836498]
-transform = Transform3D(0.0015716781, -0.01984258, 1.6117332, 0.0016892602, 1.6117331, 0.01984236, -5.5523534, 0.0004847733, 0.00046224298, -0.11810827, -0.09783253, 75.00884)
+transform = Transform3D(0.0015716781, -0.01984258, 1.6117332, 0.0016892602, 1.6117331, 0.01984236, -5.5523534, 0.0004847733, 0.00046224298, -0.1184001, 0.0068856776, 46.650017)
 mesh = SubResource("BoxMesh_jsa5y")
 surface_material_override/0 = SubResource("StandardMaterial3D_y2ytm")
 
@@ -139,7 +150,7 @@ shape = SubResource("BoxShape3D_mxpvh")
 [node name="WallL" type="MeshInstance3D" parent="." unique_id=391617034]
 transform = Transform3D(-2.427011e-07, 1.6118553, -7.0456444e-08, 0, -7.045643e-08, -1.6118555, -5.552354, -7.045643e-08, 3.079749e-15, -2.2676058, 3.9299152, 74.96959)
 mesh = SubResource("BoxMesh_t5lmo")
-surface_material_override/0 = ExtResource("2_gdbsj")
+surface_material_override/0 = ExtResource("4_88sjj")
 
 [node name="WallLBody" type="StaticBody3D" parent="WallL" unique_id=1145269006]
 
@@ -149,7 +160,7 @@ shape = SubResource("BoxShape3D_mxpvh")
 [node name="WallR" type="MeshInstance3D" parent="." unique_id=1507879185]
 transform = Transform3D(-2.427011e-07, 1.6118553, -7.0456444e-08, 0, -7.045643e-08, -1.6118555, -5.552354, -7.045643e-08, 3.079749e-15, 2.0688038, 3.721882, 75.01895)
 mesh = SubResource("BoxMesh_y2ytm")
-surface_material_override/0 = ExtResource("2_gdbsj")
+surface_material_override/0 = ExtResource("4_88sjj")
 
 [node name="WallRBody" type="StaticBody3D" parent="WallR" unique_id=568719346]
 
@@ -250,7 +261,7 @@ shape = SubResource("BoxShape3D_3hsv6")
 [node name="EndWall4" type="MeshInstance3D" parent="." unique_id=1058095809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24999046, 1.0903116, 52.048443)
 mesh = SubResource("BoxMesh_gdbsj")
-surface_material_override/0 = SubResource("StandardMaterial3D_kgmwk")
+surface_material_override/0 = ExtResource("8_50jlw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="EndWall4" unique_id=880288541]
 
@@ -260,16 +271,16 @@ shape = SubResource("BoxShape3D_7hvyv")
 [node name="BackgroundNoise" type="AudioStreamPlayer3D" parent="." unique_id=738264613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.715361, 4.603695)
 stream = ExtResource("6_4u0yh")
-volume_db = 8.35
+volume_db = -1.305
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 doppler_tracking = 2
 parameters/looping = true
 
 [node name="BackgroundNoise2" type="AudioStreamPlayer3D" parent="." unique_id=558787611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.715361, 33.34231)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.8598514, 32.27201)
 stream = ExtResource("6_4u0yh")
-volume_db = 8.35
+volume_db = -0.135
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 doppler_tracking = 2
@@ -278,7 +289,7 @@ parameters/looping = true
 [node name="BackgroundNoise3" type="AudioStreamPlayer3D" parent="." unique_id=603814153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0054188, 3.715361, 49.103558)
 stream = ExtResource("6_4u0yh")
-volume_db = 8.35
+volume_db = 0.074
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 doppler_tracking = 2
@@ -291,7 +302,7 @@ mesh = SubResource("BoxMesh_v2fgs")
 [node name="BackgroundNoise4" type="AudioStreamPlayer3D" parent="." unique_id=1369830954]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.281526, 1.8209364, 11.737141)
 stream = ExtResource("8_kgmwk")
-volume_db = -15.5
+volume_db = -29.293
 autoplay = true
 attenuation_filter_cutoff_hz = 20500.0
 doppler_tracking = 2
@@ -300,7 +311,7 @@ parameters/looping = true
 [node name="Scare1" type="AudioStreamPlayer3D" parent="." unique_id=202985329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9749393, 20.282217)
 stream = ExtResource("10_vocw4")
-volume_db = 80.0
+volume_db = 7.8
 max_db = 6.0
 
 [node name="Trigger1" type="Area3D" parent="." unique_id=1271386400]
@@ -313,3 +324,93 @@ shape = SubResource("BoxShape3D_50jlw")
 [node name="Heartbeat" type="AudioStreamPlayer3D" parent="." unique_id=1674740229]
 stream = ExtResource("11_88sjj")
 volume_db = 80.0
+
+[node name="ClassroomDoor" type="MeshInstance3D" parent="." unique_id=905603651]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5041779, 1.0903116, 36.707966)
+mesh = SubResource("BoxMesh_gdbsj")
+surface_material_override/0 = ExtResource("8_50jlw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ClassroomDoor" unique_id=674854131]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomDoor/StaticBody3D" unique_id=1306844746]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00066530704)
+shape = SubResource("BoxShape3D_7hvyv")
+
+[node name="Area3D" type="Area3D" parent="ClassroomDoor" unique_id=910089324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.21290469)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClassroomDoor/Area3D" unique_id=141271010]
+transform = Transform3D(1, -6.309027e-10, 4.554579e-12, 6.309027e-10, 0.9998958, -0.014433372, 4.554579e-12, 0.014433372, 0.9998958, 0, -0.041383624, -0.24607372)
+shape = SubResource("BoxShape3D_88sjj")
+
+[node name="EndWall5" type="MeshInstance3D" parent="." unique_id=927374035]
+transform = Transform3D(-4.371139e-08, 0, 1, 0.27103728, 0.9625689, 1.18474155e-08, -0.9625689, 0.27103728, -4.207522e-08, -2.0607603, 1.0903116, 25.650677)
+mesh = SubResource("BoxMesh_gdbsj")
+surface_material_override/0 = ExtResource("8_50jlw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EndWall5" unique_id=1087797752]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndWall5/StaticBody3D" unique_id=252290933]
+shape = SubResource("BoxShape3D_7hvyv")
+
+[node name="EndWall6" type="MeshInstance3D" parent="." unique_id=1738509025]
+transform = Transform3D(0.21741547, 0.1746706, 0.9603232, -0.37843034, 0.9219887, -0.08202202, -0.89973396, -0.34558257, 0.26655525, 1.7089719, 1.0903116, 25.650677)
+mesh = SubResource("BoxMesh_gdbsj")
+surface_material_override/0 = ExtResource("8_50jlw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EndWall6" unique_id=962487345]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndWall6/StaticBody3D" unique_id=1253324691]
+shape = SubResource("BoxShape3D_7hvyv")
+
+[node name="EndWall7" type="MeshInstance3D" parent="." unique_id=965231055]
+transform = Transform3D(-0.30385476, -0.28002033, 0.9106376, 0.6890456, 0.59550107, 0.41303146, -0.65794283, 0.7529724, 0.012001024, 1.8492284, 1.2319114, 16.170773)
+mesh = SubResource("BoxMesh_gdbsj")
+surface_material_override/0 = ExtResource("8_50jlw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EndWall7" unique_id=2125198090]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndWall7/StaticBody3D" unique_id=1874564082]
+shape = SubResource("BoxShape3D_7hvyv")
+
+[node name="EndWall8" type="MeshInstance3D" parent="." unique_id=2141216405]
+transform = Transform3D(-0.45073757, 0.23288147, 0.86174357, -0.15923768, 0.9289094, -0.33432215, -0.8783392, -0.2879136, -0.38161063, -2.0597339, 1.0363926, 16.170773)
+mesh = SubResource("BoxMesh_gdbsj")
+surface_material_override/0 = ExtResource("8_50jlw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EndWall8" unique_id=726063420]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EndWall8/StaticBody3D" unique_id=943405370]
+shape = SubResource("BoxShape3D_7hvyv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1439612975]
+transform = Transform3D(-0.011571312, 0, 0.99993306, 0, 1, 0, -0.99993306, 0, -0.011571312, -1.4853873, 2.2470474, 36.83335)
+mesh = SubResource("TextMesh_88sjj")
+surface_material_override/0 = SubResource("StandardMaterial3D_50jlw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1466949665]
+transform = Transform3D(0.11279658, -0.4257319, 0.8977913, 0.053070825, 0.90484935, 0.42241108, -0.9921998, 0, 0.124657854, 1.9704844, 2.2470474, 16.407343)
+mesh = SubResource("TextMesh_88sjj")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2049623925]
+transform = Transform3D(0.023176037, 0, -0.9997314, 0, 1, 0, 0.9997314, 0, 0.023176037, 1.9627389, 2.3745208, 25.775671)
+mesh = SubResource("TextMesh_88sjj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1253774294]
+transform = Transform3D(-0.011315883, 0.20895298, 0.9778603, 0.1850638, 0.96146613, -0.20330824, -0.9826613, 0.1786659, -0.04954946, -2.1609247, 1.8552322, 16.895882)
+mesh = SubResource("TextMesh_88sjj")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1803291196]
+transform = Transform3D(-0.011571312, 0, 0.99993306, -0.12733307, 0.9918589, -0.0014735094, -0.9917925, -0.1273416, -0.011477109, -2.1666586, 2.4514902, 25.523417)
+mesh = SubResource("TextMesh_88sjj")
+
+[node name="PlayerSpawn" type="Marker3D" parent="." unique_id=1847029369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9728292, 1.6183288, 37.00888)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=566691964]
+stream = ExtResource("13_7hvyv")
+volume_db = 10.348
+mix_target = 1
+script = ExtResource("14_y0pfb")
+
+[connection signal="body_entered" from="ClassroomDoor/Area3D" to="." method="_on_area_3d_body_entered"]
